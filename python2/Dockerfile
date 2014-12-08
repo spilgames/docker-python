@@ -1,6 +1,6 @@
-FROM centos:latest
+FROM spilgames/python-common
 
-ADD build /build
+COPY files/ /build/
 
 ONBUILD ADD . /app/src
 
