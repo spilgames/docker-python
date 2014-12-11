@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM spilgames/centos
 
 COPY files/ /build/
 
