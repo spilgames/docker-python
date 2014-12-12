@@ -1,4 +1,3 @@
-bzip2
 gcc
 gcc-c++
 glibc-devel
@@ -29,3 +28,10 @@ sysvinit-tools
 zlib-devel
 krb5-devel
 sqlite-devel
+bzip2-devel
+readline-devel
+tk-devel
+gdbm-devel
+db4-devel
+libpcap-devel
+xz-devel
