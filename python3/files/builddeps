@@ -30,7 +30,6 @@ krb5-devel
 sqlite-devel
 bzip2-devel
 readline-devel
-tk-devel
 gdbm-devel
 db4-devel
 libpcap-devel
