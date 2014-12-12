@@ -1,14 +1,13 @@
-# python2
+# python3
 
-This is the default Spilgames python2 runtime. It uses the Python version that
-ships with the default CentOS 7 image. Currently, that is version `2.7.5`.
+This is the default Spilgames python3 runtime. Current version is `3.4.2`.
 
 # Example Dockerfile
 
 Because examples speak louder than words, here's how you should use this
 runtime if all you want to do is run a simple Django app:
 
-        FROM spilgames/python2
+        FROM spilgames/python3
         COPY hacking/settings.py /app/
 
 # Building your container

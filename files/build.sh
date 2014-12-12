@@ -1,15 +1,31 @@
 #!/usr/bin/env bash
 set -e
 set -o pipefail
+set -x
+
+if [ -n "$1" ]
+then
+    python=$1
+else
+    python=python
+fi
+
+# Install build dependencies
+yum install -y $(cat /build/builddeps)
+
+# See if we have a version specific build script
+if [ -n "$1" ] && [ -x /build/build-$1.sh ];
+then
+    /build/build-$1.sh $2
+fi
 
 # Install PIP
-curl -SL 'https://bootstrap.pypa.io/get-pip.py' | python
+curl -SL 'https://bootstrap.pypa.io/get-pip.py' | $python
 
-ls -la /build/
-
-# Install uWSGI
-yum install -y $(cat /build/builddeps)
+# Install uwsgi
 pip install uwsgi
+
+# Remove build dependencies
 yum remove -y $(cat /build/builddeps)
 
 # Create uWSGI user
